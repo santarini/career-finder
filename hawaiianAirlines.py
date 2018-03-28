@@ -32,6 +32,7 @@ while i < pageCount:
         city = row.findAll('td')[4].text
         state = row.findAll('td')[5].text
         partTime = row.findAll('td')[6].text
+        company = "Hawaiian Airlines"
         print(postDate + " " + requisitionNumber + " " + title + " " + department + " " + city + " " + state + " " + partTime)
     ActionChains(driver).key_down(Keys.ALT).send_keys('n').perform()
     i += 1
