@@ -17,8 +17,8 @@ listingCount = driver.find_element_by_xpath('//*[@id="PXForm"]/table[1]/tbody/tr
 listingCount = listingCount.get_attribute('innerHTML')
 pageCount = int(listingCount)/10
 
-i = 1
-while i < pageCount:
+i = 0
+while i <= pageCount:
     #create an html variable
     pageHTML = driver.find_element_by_tag_name('html')
     pageHTML = pageHTML.get_attribute('innerHTML')
