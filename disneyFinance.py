@@ -5,8 +5,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 import bs4 as bs
 
 #create webdriver
-#driver = webdriver.Chrome(r"C:\Users\CommandCenter\AppData\Local\Programs\Python\Python36-32\chromedriver.exe")
-driver = webdriver.Chrome(r"C:\Program Files\Python\Python36\chromedriver.exe")
+driver = webdriver.Chrome(r"C:\Users\CommandCenter\AppData\Local\Programs\Python\Python36-32\chromedriver.exe")
+#driver = webdriver.Chrome(r"C:\Program Files\Python\Python36\chromedriver.exe")
 
 #navigate to careers webpage
 driver.get('https://jobs.disneycareers.com/search-jobs?k=finance&alp=6252001&alt=2')
@@ -28,6 +28,7 @@ while i <= pageCount:
         facility = row.findAll('span')[0].text
         location = row.findAll('span')[1].text
         print(title + " " + facility + " " + location)
-    nextButton = driver.find_element_by_link_text('Next')
+    nextButton = driver.find_element_by_class_name('next')
     nextButton.click()
+    time.sleep(2)
     i += 1
